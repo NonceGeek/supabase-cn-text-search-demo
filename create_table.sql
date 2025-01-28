@@ -1,9 +1,13 @@
-CREATE TABLE books (
+CREATE TABLE books(
   id SERIAL PRIMARY KEY,
   title TEXT,
   author TEXT,
   description TEXT
 );
+
+create index books_description_pgroonga_idx
+on books
+using pgroonga(description);
 
 INSERT INTO books
   (title, author, description)
