@@ -5,6 +5,8 @@ CREATE TABLE books(
   description TEXT
 );
 
+CREATE EXTENSION pgroonga;
+
 create index books_description_pgroonga_idx
 on books
 using pgroonga(description);
